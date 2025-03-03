@@ -24,3 +24,6 @@ inputs:
 outputs:
   newTag:
     description: 'The newly created tag'
+runs:
+  using: 'node14'
+  main: 'dist/index.js'
