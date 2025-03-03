@@ -13,7 +13,7 @@ import {
   setVersionProperties,
 } from './gradle';
 import { runCommand } from './run';
-import { Build, bumpBuild, getBuildFromVersion, Version } from './version';
+import { Build, Version, bumpBuild, getBuildFromVersion } from './version';
 
 const main = async () => {
   await Toolkit.run(async (tools): Promise<void> => {
