@@ -51,6 +51,8 @@ const main = async () => {
         const existingVersion = await getVersionProperties(tools);
         const { commits } = tools.context.payload;
 
+        console.log(commits);
+
         build = bumpBuild(commits ?? [], existingVersion, buildNumber);
       } else {
         // create version 0.0.1 by default in build.gradle if it does not exist

@@ -12,7 +12,8 @@ export type Build = {
 };
 
 const getCommitIntent = (message: string): string => {
-  const [commitIntent] = message.toLowerCase().split(':');
+  let [commitIntent] = message.toLowerCase().split(':');
+  commitIntent = commitIntent.replace('*', '').trim()
 
   return commitIntent;
 };
