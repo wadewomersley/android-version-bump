@@ -13,7 +13,7 @@ export type Build = {
 
 const getCommitIntent = (message: string): string => {
   let [commitIntent] = message.toLowerCase().split(':');
-  commitIntent = commitIntent.replace('*', '').trim()
+  commitIntent = commitIntent.replace('*', '').trim();
 
   return commitIntent;
 };
