@@ -49,9 +49,14 @@ const main = async () => {
 
       if (versionFileExists) {
         const existingVersion = await getVersionProperties(tools);
-        const { commits } = tools.context.payload;
+        let { commits } = tools.context.payload;
 
         console.log(commits);
+
+        if (typeof commits == 'object' && commits.length > 0) {
+          commits = commits.map((c: any) => c.message);
+          console.log(commits);
+        }
 
         build = bumpBuild(commits ?? [], existingVersion, buildNumber);
       } else {
